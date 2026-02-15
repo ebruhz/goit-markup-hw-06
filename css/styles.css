@@ -11,6 +11,7 @@ ol {
   margin: 0;
   padding: 0;
   list-style: none;
+  box-sizing: border-box;
 }
 
 img {
@@ -28,9 +29,22 @@ body {
 
 /* =========  CONTAINER ========== */
 .container {
-  width: 1158px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .container{
+    max-width: 768px;;
+  }
+  
 }
 
 .visually-hidden {
@@ -53,12 +67,29 @@ body {
   justify-content: center;
 }
 
+/* ================= BASE / MOBILE ================= */
+
 .container-header {
   display: flex;
   align-items: center;
-  width: 1158px;
+  width: 100%;
+  padding: 16px;
   margin: 0 auto;
-  padding: 24px;
+}
+
+/* ================= TABLET ================= */
+@media screen and (min-width: 768px) {
+  .container-header {
+    max-width: 768px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media screen and (min-width: 1158px) {
+  .container-header {
+    max-width: 1158px;
+  }
 }
 
 nav ul {
@@ -84,6 +115,124 @@ address ul {
   gap: 40px;
   margin: 0;
   padding: 0;
+}
+
+/* ====== Header Burger-X ====== */
+
+.menu-button .icon-burger{
+  width: 24px; 
+  height: 24px;
+ cursor: pointer;
+ display: block;
+}
+
+@media screen and (min-width:1168px) {
+  .menu-button .icon-burger{
+    display: none;
+  }
+  
+}
+
+.menu-close {
+  position: absolute;
+  display: inline-flex;     
+  width: 24px;              
+  height: 24px;                 
+  align-items: center;        
+  justify-content: center;           
+  cursor: pointer;    
+  border-radius: 50%;     
+   border: 1px solid #e7e9fc;
+  background-color: #f4f4fd;   
+   transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-close .icon-close{
+
+ width: 8px;
+ height: 8px;
+}
+
+.menu-close:hover,
+.menu-close:focus {
+  background-color: #404bbf;
+  border: none;
+
+}
+
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  z-index: 1000;
+  padding: 80px 40px 40px 40px; 
+  display: flex;
+  flex-direction: column;
+  
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+#burger-menu:checked ~ .container-header .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-nav ul{
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-nav li{
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  line-height: 1.11;
+  font-weight: 700;
+  color: #2E2F42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.mobile-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav:hover::after,
+.mobile-nav:focus::after {
+  width: 100%;
+}
+
+.mobile-nav:hover,
+.mobile-nav:focus {
+  color: #404bbf;
+}
+
+
+@media screen and (min-width:1168px) {
+.mobile-nav{
+  display: block;
+}
+
 }
 
 /* =========== LOGO & LINKLER =========== */
@@ -146,14 +295,13 @@ address ul {
 /* ============= HERO SECTION ============ */
 .heroColor-section {
   background-image:
-    linear-gradient(to bottom, rgba(46, 47, 66, 0.7),
-     rgba(46, 47, 66, 0.7)),
+    linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     image-set(
       url("../images/background.jpg") 1x,
       url("../images/background@2x.jpg") 2x
     );
   padding: 188px 0;
-   background-position: center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -198,7 +346,7 @@ address ul {
 }
 
 .footerButton {
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
@@ -222,29 +370,58 @@ address ul {
   background-color: #404bbf;
 }
 
-
-
 /* ============== SECTION FEATURES ============= */
 .section-features {
   padding: 120px 0;
 }
 
+/* ================= BASE / MOBILE ================= */
+
 .section-features ul {
   display: flex;
-  gap: 24px;
-  justify-content: space-between;
+  gap: 72px;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   list-style: none;
-  flex-direction: inherit;
+}
+
+/* ================= TABLET ================= */
+
+@media screen and (min-width: 768px) {
+  .section-features ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+/* ================= DESKTOP ================= */
+@media screen and (min-width: 1158px) {
+  .section-features ul {
+    flex-wrap: nowrap;
+  }
 }
 
 .section-features li {
   display: flex;
-  width: 264px;
   flex-direction: column;
   gap: 8px;
-  padding: 0;
+}
+/* ================= TABLET ================= */
+
+@media screen and (min-width: 768px) {
+  .section-features li {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media screen and (min-width: 1158px) {
+  .section-features li {
+    width: calc((100% - 72px) / 4);
+  }
 }
 
 .section-features li p {
@@ -428,7 +605,6 @@ address ul {
   width: 24px;
   height: 24px;
   display: flex;
- 
 }
 
 .footer-item-link:hover {
@@ -455,24 +631,18 @@ address ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
 }
-
-
-
 
 .footerInput {
   display: flex;
   gap: 24px;
   align-items: center;
-  
-
 }
 
-.footerInput input{
-    width: 264px;
+.footerInput input {
+  width: 264px;
   height: 40px;
- padding-left: 16px;
+  padding-left: 16px;
   border: 1px solid white;
   border-radius: 4px;
   background-color: transparent;
@@ -484,8 +654,8 @@ address ul {
 }
 
 .subscribe-form label {
-  display: block;      
-  margin-bottom: 16px;   
+  display: block;
+  margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -544,17 +714,15 @@ address ul {
 /* =========== MODAL ========== */
 .modal {
   position: fixed;
-  inset: 0;                 
-  display: none;            
-  justify-content: center;  
-  align-items: center;      
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
   background: rgba(46, 47, 66, 0.4);
-  
 }
 
 .is-open {
   display: flex;
- 
 }
 
 .modal-content {
@@ -563,12 +731,12 @@ address ul {
   min-height: 584px;
   border-radius: 4px;
   padding: 72px 24px 24px 24px;
-  box-shadow: 0px 1px 1px rgba(0,0,0,0.14),
-              0px 1px 3px rgba(0,0,0,0.12),
-              0px 2px 1px rgba(0,0,0,0.2);
+  box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 0;
-  position: relative;  
-      
+  position: relative;
 }
 
 /*============ KAPATMA BUTONU ============*/
@@ -586,8 +754,9 @@ address ul {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
@@ -612,7 +781,6 @@ address ul {
 .modal-form {
   display: flex;
   flex-direction: column;
-  
 }
 
 .form-field {
@@ -620,7 +788,6 @@ address ul {
   flex-direction: column;
   width: 100%;
   margin-bottom: 8px;
-  
 }
 
 .form-field label {
@@ -629,13 +796,11 @@ address ul {
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
-  
 }
 
 /*============ INPUT VE TEXTAREA ============*/
 .input-wrapper {
   position: relative;
-  
 }
 
 .modal-form input,
@@ -645,13 +810,11 @@ address ul {
   border-radius: 4px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 
 .modal-form input {
   height: 40px;
   padding-left: 38px;
-  
 }
 
 .modal-form textarea {
@@ -659,12 +822,11 @@ address ul {
   padding: 8px 16px;
   resize: none;
   font-size: 12px;
-  
 }
 
 .modal-form input:focus,
 .modal-form textarea:focus {
-  border-color: #4D5AE5;
+  border-color: #4d5ae5;
 }
 
 /*============ IKONLAR ============*/
@@ -675,11 +837,10 @@ address ul {
   transform: translateY(-50%);
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 
 .modal-form input:focus + .input-icon {
-  fill: #4D5AE5;
+  fill: #4d5ae5;
 }
 
 /*============ CHECKBOX VE BUTON ============*/
@@ -687,7 +848,6 @@ address ul {
   display: flex;
   align-items: center;
   margin-bottom: 24px;
-  
 }
 
 .checkbox-label {
@@ -698,7 +858,6 @@ address ul {
   display: flex;
   align-items: center;
   gap: 8px;
-   
 }
 
 .custom-checkbox {
@@ -709,17 +868,18 @@ address ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-fill: transparent;
+  fill: transparent;
   color: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden:checked + .checkbox-label .custom-checkbox {
   background-color: #404bbf;
   border-color: #404bbf;
-  color: white; 
+  color: white;
 }
 
 .submit-button {
@@ -737,7 +897,6 @@ fill: transparent;
   letter-spacing: 0.04em;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 
 .submit-button:hover,
@@ -746,10 +905,9 @@ fill: transparent;
 }
 
 .modal-label {
-  font-weight: 400; 
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  
 }

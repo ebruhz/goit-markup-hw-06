@@ -20,14 +20,28 @@
   </head>
 
   <body>
+  
     <!-- HEADER -->
     <header class="headHero">
+        <input type="checkbox" id="burger-menu" hidden />
+      <label for="burger-menu" class="menu-button">
+        <svg class="icon icon-burger">
+          <use xlink:href="/images/icons.svg#icon-burger">
+
+          </use>
+        </svg>
+      </label>
       <div class="container-header">
         <a class="logo" href="./index.html">
           <span class="logo-web">Web</span>Studio
         </a>
 
-        <nav>
+        <nav class="mobile-nav">
+          <label for="burger-menu" class="menu-close">
+            <svg class="icon icon-close">
+              <use xlink:href="/images/icons.svg#icon-x"></use>
+            </svg>
+          </label>
           <ul>
             <li><a href="#Studio" class="a-link">Studio</a></li>
             <li><a href="#Portfolio" class="a-link">Portfolio</a></li>
