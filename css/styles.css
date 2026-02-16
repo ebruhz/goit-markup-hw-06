@@ -11,7 +11,6 @@ ol {
   margin: 0;
   padding: 0;
   list-style: none;
-  box-sizing: border-box;
 }
 
 img {
@@ -29,22 +28,9 @@ body {
 
 /* =========  CONTAINER ========== */
 .container {
-  width: 100%;
+  width: 1158px;
   margin: 0 auto;
-  padding: 0 16px;
-}
-
-@media screen and (min-width: 1158px) {
-  .container {
-    max-width: 1158px;
-  }
-}
-
-@media screen and (min-width:768px) {
-  .container{
-    max-width: 768px;;
-  }
-  
+  padding: 0 15px;
 }
 
 .visually-hidden {
@@ -67,29 +53,12 @@ body {
   justify-content: center;
 }
 
-/* ================= BASE / MOBILE ================= */
-
 .container-header {
   display: flex;
   align-items: center;
-  width: 100%;
-  padding: 16px;
+  width: 1158px;
   margin: 0 auto;
-}
-
-/* ================= TABLET ================= */
-@media screen and (min-width: 768px) {
-  .container-header {
-    max-width: 768px;
-  }
-}
-
-/* ================= DESKTOP ================= */
-
-@media screen and (min-width: 1158px) {
-  .container-header {
-    max-width: 1158px;
-  }
+  padding: 24px;
 }
 
 nav ul {
@@ -115,124 +84,6 @@ address ul {
   gap: 40px;
   margin: 0;
   padding: 0;
-}
-
-/* ====== Header Burger-X ====== */
-
-.menu-button .icon-burger{
-  width: 24px; 
-  height: 24px;
- cursor: pointer;
- display: block;
-}
-
-@media screen and (min-width:1168px) {
-  .menu-button .icon-burger{
-    display: none;
-  }
-  
-}
-
-.menu-close {
-  position: absolute;
-  display: inline-flex;     
-  width: 24px;              
-  height: 24px;                 
-  align-items: center;        
-  justify-content: center;           
-  cursor: pointer;    
-  border-radius: 50%;     
-   border: 1px solid #e7e9fc;
-  background-color: #f4f4fd;   
-   transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-close .icon-close{
-
- width: 8px;
- height: 8px;
-}
-
-.menu-close:hover,
-.menu-close:focus {
-  background-color: #404bbf;
-  border: none;
-
-}
-
-
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
-  z-index: 1000;
-  padding: 80px 40px 40px 40px; 
-  display: flex;
-  flex-direction: column;
-  
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-#burger-menu:checked ~ .container-header .mobile-nav {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.mobile-nav ul{
-  list-style: none;
-  text-align: center;
-}
-
-.mobile-nav li{
-  font-size: 36px;
-  letter-spacing: 0.02em;
-  line-height: 1.11;
-  font-weight: 700;
-  color: #2E2F42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-.mobile-nav::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 4px;
-  background-color: #404bbf;
-  border-radius: 2px;
-  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-nav:hover::after,
-.mobile-nav:focus::after {
-  width: 100%;
-}
-
-.mobile-nav:hover,
-.mobile-nav:focus {
-  color: #404bbf;
-}
-
-
-@media screen and (min-width:1168px) {
-.mobile-nav{
-  display: block;
-}
-
 }
 
 /* =========== LOGO & LINKLER =========== */
@@ -294,16 +145,10 @@ address ul {
 
 /* ============= HERO SECTION ============ */
 .heroColor-section {
-  background-image:
+  background:
     linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    image-set(
-      url("../images/background.jpg") 1x,
-      url("../images/background@2x.jpg") 2x
-    );
+    url("../images/background.jpg") center / cover no-repeat;
   padding: 188px 0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .heroColor-section .container {
@@ -375,53 +220,22 @@ address ul {
   padding: 120px 0;
 }
 
-/* ================= BASE / MOBILE ================= */
-
 .section-features ul {
   display: flex;
-  gap: 72px;
-  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-/* ================= TABLET ================= */
-
-@media screen and (min-width: 768px) {
-  .section-features ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-}
-
-/* ================= DESKTOP ================= */
-@media screen and (min-width: 1158px) {
-  .section-features ul {
-    flex-wrap: nowrap;
-  }
+  flex-direction: inherit;
 }
 
 .section-features li {
   display: flex;
+  width: 264px;
   flex-direction: column;
   gap: 8px;
-}
-/* ================= TABLET ================= */
-
-@media screen and (min-width: 768px) {
-  .section-features li {
-    width: calc((100% - 24px) / 2);
-  }
-}
-
-/* ================= DESKTOP ================= */
-
-@media screen and (min-width: 1158px) {
-  .section-features li {
-    width: calc((100% - 72px) / 4);
-  }
+  padding: 0;
 }
 
 .section-features li p {
@@ -710,7 +524,6 @@ address ul {
 .social-item-link:focus {
   background-color: #404bbf;
 }
-
 /* =========== MODAL ========== */
 .modal {
   position: fixed;
@@ -910,4 +723,73 @@ address ul {
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #8e8f99;
+}
+
+/*  MOBILE  MENU --------------*/
+
+
+.social-mobil {
+  display: flex;
+  gap: 16px;
+}
+
+.mobile-item-link {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobil-link {
+  width: 16px;
+  height: 16px;
+  color: #f4f4fd;
+  fill: currentColor;
+}
+
+.mobile-item-link:hover,
+.mobile-item-link:focus {
+  background-color: #404bbf;
+}
+
+
+
+.tel-link,
+.mail-link {
+  position: relative;
+  text-decoration: none;
+  font-style: normal;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tel-link::after,
+.mail-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+  width: 0;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tel-link:hover::after,
+.tel-link:focus::after,
+.mail-link:hover::after,
+.mail-link:focus::after {
+  width: 100%;
+}
+
+.tel-link:hover,
+.tel-link:focus,
+.mail-link:hover,
+.mail-link:focus {
+  color: #404bbf;
 }

@@ -23,48 +23,67 @@
   
     <!-- HEADER -->
     <header class="headHero">
-        <input type="checkbox" id="burger-menu" hidden />
-      <label for="burger-menu" class="menu-button">
-        <svg class="icon icon-burger">
-          <use xlink:href="/images/icons.svg#icon-burger">
-
-          </use>
-        </svg>
-      </label>
       <div class="container-header">
         <a class="logo" href="./index.html">
           <span class="logo-web">Web</span>Studio
         </a>
 
-        <nav class="mobile-nav">
-          <label for="burger-menu" class="menu-close">
-            <svg class="icon icon-close">
-              <use xlink:href="/images/icons.svg#icon-x"></use>
-            </svg>
-          </label>
-          <ul>
+        <button class="menu-button" type="button">
+          <svg width="32" height="22">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
+
+        <div class="mobile-menu">
+          <div class="mobile-menu-container">
+            <button class="menu-close" type="button">
+              <svg width="8" height="8">
+          
+              </svg>
+            </button>
+             
+            <nav class="mobile-nav">
+              <ul>
             <li><a href="#Studio" class="a-link">Studio</a></li>
             <li><a href="#Portfolio" class="a-link">Portfolio</a></li>
             <li><a href="#Contacts" class="a-link">Contacts</a></li>
           </ul>
-        </nav>
+            </nav>
 
-        <address>
-          <ul>
-            <li>
-              <a href="mailto:info@devstudio.com" class="a-link">
-                info@devstudio.com
-              </a>
-            </li>
-            <li>
-              <a href="tel:+110001111111" class="a-link">
-                +11 (000) 111-11-11
-              </a>
-            </li>
-          </ul>
-        </address>
+            <div class="mobile-footer">
+          <address class="mobile-address">
+            <ul class="mobile-address-list">
+              <li><a href="tel:+110001111111" class="tel-link">+11 (000) 111-11-11</a></li>
+              <li><a href="mailto:info@devstudio.com" class="mail-link">info@devstudio.com</a></li>
+            </ul>
+          </address>
+         <div class="social-mobil">
+            <a href="#" class="mobile-item-link">
+              <svg class="mobil-link">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+            <a href="#" class="mobile-item-link">
+              <svg class="mobil-link">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+           <a href="#" class="mobile-item-link">
+              <svg class="mobil-link">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          <a href="#" class="mobile-item-link">
+              <svg class="mobil-link">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
+  </div>
+</header>
 
     <main>
       <!-- HERO -->
