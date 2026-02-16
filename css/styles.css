@@ -28,9 +28,9 @@ body {
 
 /* =========  CONTAINER ========== */
 .container {
-  width: 1158px;
+  max-width: 100%;
+  padding: 0 16px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
 .visually-hidden {
@@ -56,28 +56,26 @@ body {
 .container-header {
   display: flex;
   align-items: center;
-  width: 1158px;
+  justify-content: space-between;
+ max-width: 100%;
+  padding: 16px;
   margin: 0 auto;
-  padding: 24px;
 }
 
-nav ul {
-  display: flex;
-  gap: 40px;
-  margin-left: 156px;
-  padding: 0;
+.container-header nav ul {
+  display: none;
 }
+
+
+address {
+  display: none;
+}
+
 
 nav {
   gap: 40px;
 }
 
-address {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
 
 address ul {
   display: flex;
@@ -112,13 +110,16 @@ address ul {
   line-height: 1.2;
 }
 
+
+
 .a-link {
-  position: relative;
   text-decoration: none;
   font-style: normal;
   color: #2e2f42;
-  padding: 24px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  
 }
 
 .a-link::after {
@@ -222,13 +223,10 @@ address ul {
 
 .section-features ul {
   display: flex;
-  gap: 24px;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  flex-direction: inherit;
+  flex-direction: column;
+  gap: 72px;
 }
+
 
 .section-features li {
   display: flex;
@@ -254,9 +252,10 @@ address ul {
 
 .teamOne-section ul {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
+
 
 .teamOne-section li {
   background-color: #ffffff;
@@ -288,10 +287,11 @@ address ul {
 }
 
 .section-port ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
+
 
 .section-port li {
   border-bottom: 1px solid #e7e9fc;
@@ -727,6 +727,28 @@ address ul {
 
 /*  MOBILE  MENU --------------*/
 
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: white;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 250ms ease, visibility 250ms ease;
+  z-index: 999;
+}
+
+
+/* !ICONS  */
 
 .social-mobil {
   display: flex;
@@ -756,6 +778,14 @@ address ul {
   background-color: #404bbf;
 }
 
+
+.mobil-close-btn svg {
+  pointer-events: none;
+}
+
+
+
+/*! Adress */
 
 
 .tel-link,
@@ -793,3 +823,125 @@ address ul {
 .mail-link:focus {
   color: #404bbf;
 }
+
+
+
+/*! --------------- BURGER ---------------*/
+
+.burger-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+
+
+
+/*! ----------- CLOSE BTN--------*/
+
+.mobil-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e7e9fc;
+  background-color: #f4f4fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobil-close-btn:hover,
+.mobil-close-btn:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
+
+/*! -----NAV LİST----*/
+
+.mobile-nav ul{
+  list-style: none;
+  text-align: center;
+}
+
+
+
+
+/*? ---------------DESKTOP ------------*/
+
+
+@media (min-width: 1158px) {
+
+    .container-header {
+    width: 1158px;
+    padding: 24px 0;
+  }
+
+  .container {
+    max-width: 1158px;
+    padding: 0;
+  }
+  .section-features li {
+    width: 264px;
+  }
+  .section-port ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .hero {
+    font-size: 56px;
+  }
+}
+
+  
+
+/*? ----------TABLET BREAK ------*/
+
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+    gap: 40px;
+    margin-left: 120px;
+  }
+  address {
+    display: flex;
+    margin-left: auto;
+    gap: 40px;
+  }
+  .menu-button {
+    display: none;
+  }
+  .section-features ul {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .teamOne-section ul {
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+}
+
+
+
+#burger-toggle:checked ~ .mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
