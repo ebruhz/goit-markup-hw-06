@@ -21,42 +21,37 @@
 
   <body>
     <!-- HEADER -->
- <header class="headHero">
-  <div class="container-header">
+    <header class="headHero">
+      <div class="container-header">
+        <a class="logo" href="./index.html">
+          <span class="logo-web">Web</span>Studio
+        </a>
 
-    <a class="logo" href="./index.html">
-      <span class="logo-web">Web</span>Studio
-    </a>
+        <input type="checkbox" id="burger-toggle" class="burger-toggle" />
 
-    <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+        <label for="burger-toggle" class="menu-button">
+          <svg width="24" height="24">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </label>
 
-    <label for="burger-toggle" class="menu-button">
-      <svg width="24" height="24">
-        <use href="./images/icons.svg#icon-burger"></use>
-      </svg>
-    </label>
+        <div class="mobile-menu">
+          <label for="burger-toggle" class="mobil-close-btn">
+            <svg width="8" height="8">
+              <use href="./images/icons.svg#icon-x"></use>
+            </svg>
+          </label>
 
-    <div class="mobile-menu">
-
-      <label for="burger-toggle" class="mobil-close-btn">
-        <svg width="8" height="8">
-          <use href="./images/icons.svg#icon-x"></use>
-        </svg>
-      </label>
-
-      <nav class="mobile-nav">
-        <ul class="mobile-nav-list">
-          <li><a href="#studio" class="a-link">Studio</a></li>
-          <li><a href="#portfolio" class="a-link">Portfolio</a></li>
-          <li><a href="#contacts" class="a-link">Contacts</a></li>
-        </ul>
-      </nav>
-
-    </div>
-
-  </div>
-</header>
-
+          <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+              <li><a href="#studio" class="a-link">Studio</a></li>
+              <li><a href="#portfolio" class="a-link">Portfolio</a></li>
+              <li><a href="#contacts" class="a-link">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
     <main>
       <!-- HERO -->
@@ -71,7 +66,7 @@
       <section class="section-features">
         <div class="container">
           <h2 class="visually-hidden">Our Features</h2>
-          <ul>
+          <ul class="mobil-icon">
             <li>
               <div class="icons">
                 <svg class="icon">

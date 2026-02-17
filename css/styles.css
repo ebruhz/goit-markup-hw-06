@@ -5,7 +5,10 @@ h3,
 h4,
 h5,
 h6,
-p,
+p {
+  margin: 0;
+}
+
 ul,
 ol {
   margin: 0;
@@ -22,13 +25,15 @@ img {
 body {
   font-family: "Roboto", sans-serif;
   color: #434455;
+  font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.02em;
   margin: 0;
 }
 
 /* =========  CONTAINER ========== */
 .container {
-  max-width: 100%;
+  max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -57,7 +62,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
- max-width: 100%;
   padding: 16px;
   margin: 0 auto;
 }
@@ -66,22 +70,13 @@ body {
   display: none;
 }
 
-
 address {
   display: none;
 }
 
-
-nav {
-  gap: 40px;
-}
-
-
 address ul {
   display: flex;
   gap: 40px;
-  margin: 0;
-  padding: 0;
 }
 
 /* =========== LOGO & LINKLER =========== */
@@ -110,16 +105,14 @@ address ul {
   line-height: 1.2;
 }
 
-
-
 .a-link {
+  position: relative;
   text-decoration: none;
   font-style: normal;
   color: #2e2f42;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.1;
-  
 }
 
 .a-link::after {
@@ -227,53 +220,35 @@ address ul {
   gap: 72px;
 }
 
-
 .section-features li {
-  display: flex;
   width: 264px;
+  display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 0;
-}
-
-.section-features li p {
-  letter-spacing: 0.02em;
 }
 
 /*=========== TEAM SECTION ============= */
 .teamOne-section {
   background-color: #f4f4fd;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
   padding: 120px 0;
+  text-align: center;
 }
 
-.teamOne-section ul {
+.team-list {
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
 
-
-.teamOne-section li {
-  background-color: #ffffff;
+.team-card {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-}
-
-.teamOne-section li img {
-  width: 264px;
-  height: auto;
-}
-
-.teamOne-section p {
-  letter-spacing: 0.02em;
-  text-align: center;
-  line-height: 1.5;
-  font-size: 16px;
-  font-weight: 400;
+  border-radius: 4px;
+  box-shadow:
+    0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 /* ======== PORTFOLIO SECTION =========== */
@@ -282,16 +257,11 @@ address ul {
 }
 
 .section-port {
-  justify-content: space-between;
   padding: 120px 0;
-}
-
-.section-port ul {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
-
 
 .section-port li {
   border-bottom: 1px solid #e7e9fc;
@@ -300,8 +270,7 @@ address ul {
 }
 
 .section-port li img {
-  width: 360px;
-  height: auto;
+  width: 100%;
 }
 
 /* =========== HEADINGS ========== */
@@ -315,10 +284,12 @@ address ul {
 }
 
 .header-3 {
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   background-color: white;
+  text-align: center;
 }
 
 .team-card-content {
@@ -373,15 +344,6 @@ address ul {
 
 .pTitle {
   margin-top: 8px;
-}
-
-.team-card {
-  border: white;
-  border-radius: 4px 4px;
-  box-shadow:
-    0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 /*============ FOOTER ============ */
@@ -479,21 +441,9 @@ address ul {
 
 /* =========== ICONS========== */
 
-.icons {
-  width: 264px;
-  height: 112px;
-  background-color: #f4f4fd;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* BASE */
 .icon {
-  width: 64px;
-  height: 64px;
-  fill: #2e2f42;
+  display: none;
 }
 
 .socialLink {
@@ -733,7 +683,6 @@ address ul {
   gap: 40px;
 }
 
-
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -743,10 +692,11 @@ address ul {
   visibility: hidden;
   pointer-events: none;
 
-  transition: opacity 250ms ease, visibility 250ms ease;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
   z-index: 999;
 }
-
 
 /* !ICONS  */
 
@@ -778,15 +728,11 @@ address ul {
   background-color: #404bbf;
 }
 
-
 .mobil-close-btn svg {
   pointer-events: none;
 }
 
-
-
 /*! Adress */
-
 
 .tel-link,
 .mail-link {
@@ -802,7 +748,7 @@ address ul {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; 
+  bottom: -4px;
   width: 0;
   height: 4px;
   background-color: #404bbf;
@@ -824,8 +770,6 @@ address ul {
   color: #404bbf;
 }
 
-
-
 /*! --------------- BURGER ---------------*/
 
 .burger-toggle {
@@ -833,11 +777,6 @@ address ul {
   opacity: 0;
   pointer-events: none;
 }
-
-
-
-
-
 
 /*! ----------- CLOSE BTN--------*/
 
@@ -867,23 +806,80 @@ address ul {
   fill: #ffffff;
 }
 
-
 /*! -----NAV LİST----*/
 
-.mobile-nav ul{
+.mobile-nav ul {
   list-style: none;
   text-align: center;
 }
 
+/*? ----------TABLET BREAK ------*/
+@media screen and (min-width: 768px) and (max-width: 1158px) {
 
 
+  .container {
+    max-width: 768px;
+  }
+
+  .container-header nav ul {
+    display: flex;
+    gap: 40px;
+    margin-left: 120px;
+  }
+
+  address {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .team-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px 24px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 264px;
+  }
+
+  
+}
 
 /*? ---------------DESKTOP ------------*/
 
+@media screen and (min-width: 1158px) {
+  .section-features ul.mobil-icon {
+    flex-direction: row;
+    gap: 24px;
+  }
 
-@media (min-width: 1158px) {
+  .icons {
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
 
-    .container-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 8px;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    fill: #2e2f42;
+    display: block;
+  }
+
+  .container-header {
     width: 1158px;
     padding: 24px 0;
   }
@@ -903,45 +899,14 @@ address ul {
   .hero {
     font-size: 56px;
   }
-}
-
-  
-
-/*? ----------TABLET BREAK ------*/
-
-@media (min-width: 768px) {
-  nav ul {
-    display: flex;
-    gap: 40px;
-    margin-left: 120px;
-  }
-  address {
-    display: flex;
-    margin-left: auto;
-    gap: 40px;
-  }
-  .menu-button {
+  .menu-button{
     display: none;
   }
-  .section-features ul {
-    flex-direction: row;
-    gap: 24px;
-  }
-  .teamOne-section ul {
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-  }
-
 }
 
-
-
+/*  CHECK BASE */
 #burger-toggle:checked ~ .mobile-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
-
