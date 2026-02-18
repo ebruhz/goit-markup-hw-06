@@ -862,9 +862,23 @@ address ul {
 
 
 @media screen and (min-width: 1158px) {
+ 
+  .container {
+    max-width: 1158px;
+  }
+
+  .container-header {
+    padding: 24px 0;
+  }
+
   .section-features ul.mobil-icon {
-  flex-direction: row;
+    flex-direction: row;
     gap: 24px;
+    
+  }
+
+  .section-features li {
+    width: 264px;
   }
 
   .icons {
@@ -873,11 +887,9 @@ address ul {
     background-color: #f4f4fd;
     border: 1px solid #8e8f99;
     border-radius: 4px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 8px;
   }
 
@@ -888,29 +900,53 @@ address ul {
     display: block;
   }
 
-  .container-header {
-    width: 1158px;
-    padding: 24px 0;
-  }
-
-  .container {
-    max-width: 1158px;
-    padding: 0;
-  }
-  .section-features li {
-    width: 264px;
-  }
   .section-port ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
-  .hero {
-    font-size: 56px;
-  }
-  .menu-button{
+
+  .menu-button {
     display: none;
   }
+
+  .teamOne-section {
+  background-color: #f4f4fd;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 120px 0;
+}
+
+ .team-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: space-between;
+  }
+
+  .team-card {
+    width: 264px;
+  }
+
+  .header-2 {
+  font-weight: 700;
+  line-height: 1.11;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.header-3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  background-color: white;
+}
+
 }
 
 /*  CHECK BASE */
