@@ -22,36 +22,118 @@
   <body>
     <!-- HEADER -->
     <header class="headHero">
-      <div class="container-header">
-        <a class="logo" href="./index.html">
-          <span class="logo-web">Web</span>Studio
-        </a>
+  <div class="container-header">
 
-        <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+    <!-- LOGO -->
+    <a class="logo" href="./index.html">
+      <span class="logo-web">Web</span>Studio
+    </a>
 
-        <label for="burger-toggle" class="menu-button">
-          <svg width="24" height="24">
-            <use href="./images/icons.svg#icon-burger"></use>
-          </svg>
-        </label>
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#studio" class="nav-link">Studio</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contacts" class="nav-link">Contacts</a></li>
+      </ul>
+    </nav>
 
-        <div class="mobile-menu">
-          <label for="burger-toggle" class="mobil-close-btn">
-            <svg width="8" height="8">
-              <use href="./images/icons.svg#icon-x"></use>
-            </svg>
-          </label>
+    <!-- DESKTOP ADDRESS -->
+    <address class="address">
+      <ul class="contact-list">
+        <li>
+          <a href="mailto:info@devstudio.com" class="contact-link">
+            info@devstudio.com
+          </a>
+        </li>
+        <li>
+          <a href="tel:+110001111111" class="contact-link">
+            +11 (000) 111-11-11
+          </a>
+        </li>
+      </ul>
+    </address>
 
-          <nav class="mobile-nav">
-            <ul class="mobile-nav-list">
-              <li><a href="#studio" class="a-link">Studio</a></li>
-              <li><a href="#portfolio" class="a-link">Portfolio</a></li>
-              <li><a href="#contacts" class="a-link">Contacts</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <!-- BURGER TOGGLE -->
+    <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
+    <!-- BURGER BUTTON -->
+    <label for="burger-toggle" class="menu-button">
+      <svg width="24" height="24">
+        <use href="./images/icons.svg#icon-burger"></use>
+      </svg>
+    </label>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+
+      <!-- CLOSE BUTTON -->
+      <label for="burger-toggle" class="mobil-close-btn">
+        <svg width="24" height="24">
+          <use href="./images/icons.svg#icon-x"></use>
+        </svg>
+      </label>
+
+      <!-- MOBILE NAV -->
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li><a href="#studio" class="mobile-link">Studio</a></li>
+          <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+          <li><a href="#contacts" class="mobile-link">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <!-- MOBILE ADDRESS -->
+      <address class="mobile-address">
+        <ul class="mobile-contact-list">
+          <li>
+            <a href="mailto:info@devstudio.com" class="mobile-contact-link">
+              info@devstudio.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+110001111111" class="mobile-contact-link">
+              +11 (000) 111-11-11
+            </a>
+          </li>
+        </ul>
+
+        <ul class="mobile-social-list">
+          <li>
+            <a href="#" class="mobile-social-icon">
+              <svg class="mobile-icon">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-icon">
+              <svg class="mobile-icon">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-icon">
+              <svg class="mobile-icon">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-icon">
+              <svg class="mobile-icon">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </address>
+
+    </div>
+  </div>
+</header>
+
 
     <main>
       <!-- HERO -->
@@ -73,7 +155,7 @@
                   <use href="./images/icons.svg#icon-antenna"></use>
                 </svg>
               </div>
-              <h3 class="header-3">Strategy</h3>
+              <h3 class="mobil-head-3">Strategy</h3>
               <p class="mobil-p">
                 Our goal is to identify the business problem to walk away with
                 the perfect and creative solution.
@@ -85,8 +167,8 @@
                   <use href="./images/icons.svg#icon-clock"></use>
                 </svg>
               </div>
-              <h3 class="header-3">Punctuality</h3>
-              <p>
+              <h3 class="mobil-head-3">Punctuality</h3>
+              <p class="mobil-p">
                 Bring the key message to the brand's audience for the best price
                 within the shortest possible time.
               </p>
@@ -97,8 +179,8 @@
                   <use href="./images/icons.svg#icon-laptop"></use>
                 </svg>
               </div>
-              <h3 class="header-3">Diligence</h3>
-              <p>
+              <h3 class="mobil-head-3">Diligence</h3>
+             <p class="mobil-p">
                 Research and confirm brands with the strongest digital growth
                 opportunities and minimize risk.
               </p>
@@ -109,8 +191,8 @@
                   <use href="./images/icons.svg#icon-astronaut"></use>
                 </svg>
               </div>
-              <h3 class="header-3">Technologies</h3>
-              <p>
+              <h3 class="mobil-head-3">Technologies</h3>
+              <p class="mobil-p">
                 Design practice focused on digital experiences. We bring forth a
                 deep passion for problem-solving.
               </p>
@@ -282,7 +364,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Cashless Payment</h3>
+                <h3 class="header-mobil">Cashless Payment</h3>
                 <p class="pTitle">Marketing</p>
               </div>
             </li>
@@ -300,7 +382,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Banking App</h3>
+                <h3 class="header-mobil">Banking App</h3>
                 <p class="pTitle">App</p>
               </div>
             </li>
@@ -318,7 +400,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Meditation App</h3>
+                <h3 class="header-mobil">Meditation App</h3>
                 <p class="pTitle">App</p>
               </div>
             </li>
@@ -336,7 +418,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Taxi Service</h3>
+                <h3 class="header-mobil">Taxi Service</h3>
                 <p class="pTitle">Marketing</p>
               </div>
             </li>
@@ -354,7 +436,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Screen Illustrations</h3>
+                <h3 class="header-mobil">Screen Illustrations</h3>
                 <p class="pTitle">Design</p>
               </div>
             </li>
@@ -372,7 +454,7 @@
                 </p>
               </div>
               <div class="portfolio-card-content">
-                <h3 class="header-3">Online Courses</h3>
+                <h3 class="header-mobil">Online Courses</h3>
                 <p class="pTitle">Marketing</p>
               </div>
             </li>

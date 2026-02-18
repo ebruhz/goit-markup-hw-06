@@ -187,10 +187,9 @@ address ul {
 .footerButton {
   display: flex;
   align-items: center;
-  justify-content: center;
+  align-self: center;
   gap: 16px;
-   min-width: 165px;
-  max-width: 264px;
+  max-width: 165px;
   height: 40px;
   padding: 0 24px;
   background-color: #4d5ae5;
@@ -275,6 +274,28 @@ address ul {
 }
 
 /* =========== HEADINGS ========== */
+
+.mobil-head-3{
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.11;
+  color: #2E2F42;
+
+}
+
+
+.mobil-p{
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: #434455;
+
+}
+
+
+
 .header-2 {
   font-weight: 700;
   line-height: 1.11;
@@ -284,15 +305,14 @@ address ul {
   margin-bottom: 72px;
 }
 
-.header-3 {
-  font-size: 36px;
-  font-weight: 700;
+.header-mobil{
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.11;
   letter-spacing: 0.02em;
   background-color: white;
-  text-align: center;
+  text-align: left;
 }
-
 
 .team-card-content {
   padding: 32px 16px;
@@ -353,19 +373,17 @@ address ul {
   background-color: #2e2f42;
   color: white;
   padding: 100px 0;
-
 }
 
 .footer-container {
   display: flex;
-  flex-direction: column;   
-  align-items: center;     
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  gap: 72px;                
+  gap: 72px;
 }
 .footer a {
   color: #f4f4fd;
-  
 }
 
 .footer p {
@@ -423,18 +441,19 @@ address ul {
 
 .footerInput input {
   width: 100%;
+ width: 288px;
   height: 40px;
   padding-left: 16px;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 4px;
   color: white;
+  align-self: center;
 }
 
 .footerInput input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-
 
 .subscribe-form label {
   display: block;
@@ -456,6 +475,7 @@ address ul {
 .socialLink {
   display: flex;
   gap: 16px;
+  align-self: center;
 }
 
 .social-item-link,
@@ -710,6 +730,7 @@ address ul {
 .social-mobil {
   display: flex;
   gap: 16px;
+
 }
 
 .mobile-item-link {
@@ -822,8 +843,6 @@ address ul {
 
 /*? ----------TABLET BREAK ------*/
 @media screen and (min-width: 768px) and (max-width: 1158px) {
-
-
   .container {
     max-width: 768px;
   }
@@ -853,29 +872,109 @@ address ul {
     width: 100%;
     max-width: 264px;
   }
-
-  
 }
 
 /*? ---------------DESKTOP ------------*/
 
-
-
 @media screen and (min-width: 1158px) {
- 
+  .container-header nav ul {
+    display: flex;
+    gap: 40px;
+    margin-left: 120px;
+  }
+
+
+  .mobil-head-3{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    
+  }
+
+
+  .mobil-p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+
+  .contact-link,
+  .nav-link {
+    position: relative;
+    text-decoration: none;
+    font-style: normal;
+    color: #2e2f42;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-link::after,
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-link:hover::after,
+  .contact-link:focus::after,
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+    width: 100%;
+  }
+
+  .contact-link:hover,
+  .contact-link:focus,
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #404bbf;
+  }
+
+  address {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  address ul {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+
+
+.container-header {
+  display: flex;
+  align-items: center;
+  width: 1158px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+
   .container {
     max-width: 1158px;
   }
 
-  .container-header {
-    padding: 24px 0;
-  }
 
-  .section-features ul.mobil-icon {
-    flex-direction: row;
-    gap: 24px;
-    
-  }
+
+ .section-features ul {
+  flex-direction: row;
+  gap: 24px;
+}
 
   .section-features li {
     width: 264px;
@@ -906,20 +1005,18 @@ address ul {
     gap: 30px;
   }
 
-  .menu-button {
-    display: none;
-  }
+  
 
   .teamOne-section {
-  background-color: #f4f4fd;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 120px 0;
-}
+    background-color: #f4f4fd;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 120px 0;
+  }
 
- .team-list {
+  .team-list {
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -931,23 +1028,46 @@ address ul {
   }
 
   .header-2 {
-  font-weight: 700;
-  line-height: 1.11;
-  font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  
+  .footer-container {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: left;
+  }
+   .footer-social {
+    align-items: flex-start;
+  }
+
+    .footerInput {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: none;
+  }
+  
+  .footerInput input {
+    width: 264px;
+  }
+
+  .footer p {
+  max-width: 264px;
+  color: #f4f4fd;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
-  margin-bottom: 72px;
 }
 
-.header-3 {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  background-color: white;
 }
 
-}
+/*? Final Desktop */
 
 /*  CHECK BASE */
 #burger-toggle:checked ~ .mobile-menu {
