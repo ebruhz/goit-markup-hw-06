@@ -1,9 +1,16 @@
 /* =========   RESET  =========== */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -26,6 +33,7 @@ body {
 
 /* =========  CONTAINER ========== */
 .container {
+  width: 100%;
   max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
@@ -48,7 +56,6 @@ body {
 /* ========  HEADER & NAVIGATION =========== */
 .headHero {
   border-bottom: 1px solid #e7e9fc;
-  display: flex;
   justify-content: center;
 }
 
@@ -94,6 +101,18 @@ address ul {
     url("../images/background.jpg") center / cover no-repeat;
   padding: 188px 0;
 }
+
+
+@media (min-resolution: 2x) {
+  .heroColor-section {
+    background-image: 
+    linear-gradient(to bottom,  rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+   url("../images/background@2x.jpg") center / cover no-repeat;
+   padding: 188px 0;
+  }
+}
+
+
 
 .heroColor-section .container {
   display: flex;
@@ -171,7 +190,8 @@ address ul {
 }
 
 .section-features li {
-  width: 264px;
+   max-width: 264px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -283,7 +303,7 @@ address ul {
   text-align: center;
   letter-spacing: 0.02em;
   line-height: 1.11;
-  color: #2E2F42;
+  color: #2e2f42;
 }
 
 .mobil-p {
@@ -413,7 +433,9 @@ address ul {
 }
 
 /*============ ICONS ============ */
-.icon { display: none; }
+.icon {
+  display: none;
+}
 
 .socialLink {
   display: flex;
@@ -471,6 +493,10 @@ address ul {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 0;
   position: relative;
+}
+
+.checkbox-text {
+  display: inline;
 }
 
 /*============ KAPATMA BUTONU ============*/
@@ -589,9 +615,11 @@ address ul {
   display: flex;
   align-items: center;
   gap: 8px;
+ 
 }
 
 .custom-checkbox {
+  
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -678,7 +706,6 @@ address ul {
   pointer-events: none;
 }
 
-
 /* NAVIGATION */
 .mobile-nav {
   margin-bottom: 120px;
@@ -691,7 +718,7 @@ address ul {
 }
 
 .mobile-nav li {
-  color: #2E2F42;
+  color: #2e2f42;
   font-size: 36px;
   font-weight: 700;
 }
@@ -730,6 +757,7 @@ address ul {
 .mobile-social-list {
   display: flex;
   gap: 16px;
+  justify-content: space-between;
 }
 
 .mobile-social-icon {
@@ -740,7 +768,6 @@ address ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .mobile-social-icon:hover {
@@ -859,38 +886,64 @@ address ul {
 
 /* ADDRESS BLOCK */
 .mobile-address {
- display: flex;
+  display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
 .mobile-address:hover,
-.mobile-address:focus{
-  color: #4D5AE5;
+.mobile-address:focus {
+  color: #4d5ae5;
 }
+
+
+
 
 /* ================== MEDIA QUERIES ================== */
 
 /* ---------- TABLET: 768px - 1158px ---------- */
 @media screen and (min-width: 768px) and (max-width: 1157px) {
-
-  .container { max-width: 768px; }
-
-  .burger-toggle,
-  .menu-button { display: none; }
-
-  .container-header nav ul {
-    display: flex;
-    gap: 40px;
-    margin-left: 120px;
+  .container {
+    max-width: 768px;
   }
 
-  address {
+  .container-header {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    gap: 40px;
   }
+
+  .burger-toggle,
+  .menu-button {
+    display: none;
+  }
+
+
+
+  .nav-list {
+    display: flex;
+    gap: 40px;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2E2F42;
+  }
+
+
+    address {
+    display: block;
+    margin-left: auto;   
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+   
+  }
+
+.container-header nav ul { display: flex; gap: 40px; margin-left: 120px; }
+
 
   /* Team Section */
   .team-list {
@@ -899,22 +952,145 @@ address ul {
     gap: 64px 24px;
   }
 
-  .team-card { width: 100%; max-width: 264px; }
+  .team-card {
+    width: 100%;
+    max-width: 264px;
+  }
 
+
+.nav-link,
+  .contact-link {
+    position: relative;
+    text-decoration: none;
+    font-style: normal;
+    color: #2e2f42;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link::after,
+  .contact-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus::after,
+  .contact-link:hover::after,
+  .contact-link:focus::after {
+    width: 100%;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .contact-link:hover,
+  .contact-link:focus {
+    color: #404bbf;
+  }
+
+
+
+
+  .section-features ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+  }
+
+  
+
+  .mobil-head-3 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+
+  .mobil-p {
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    color: #434455;
+    text-align: left;
+  }
+
+
+
+
+   .section-port ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+   
+  }
+
+.footer{
+  padding-left: 108px;
 }
+
+   .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;              
+    align-items: flex-start;
+    text-align: left;
+    
+  }
+
+  .footer-left {
+    max-width: 264px;
+  }
+
+  .footer-social {
+    align-items: flex-start;
+  }
+
+  .footerSub {
+    width: 100%;                 
+    max-width: 453px;
+  }
+
+  .footerInput {
+    flex-direction: row;
+    gap: 24px;
+    max-width: none;
+  }
+
+  .footerInput input {
+    width: 264px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ================== MEDIA QUERIES ================== */
+
 
 /* ---------- DESKTOP: 1158px+ ---------- */
 @media screen and (min-width: 1158px) {
-
-  .container { max-width: 1158px; }
+  .container {
+    max-width: 1158px;
+  }
 
   .burger-toggle,
-  .menu-button { display: none; }
+  .menu-button {
+    display: none;
+  }
 
-  .container-header { 
-    width: 1158px; 
-    margin: 0 auto; 
-    padding: 24px 0; 
+  .container-header {
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 24px 0;
   }
 
   .container-header nav ul {
@@ -930,7 +1106,7 @@ address ul {
     font-style: normal;
     color: #2e2f42;
     padding: 24px 0;
-    transition: color 250ms cubic-bezier(0.4,0,0.2,1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-link::after,
@@ -943,7 +1119,7 @@ address ul {
     height: 4px;
     background-color: #404bbf;
     border-radius: 2px;
-    transition: width 250ms cubic-bezier(0.4,0,0.2,1);
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-link:hover::after,
@@ -967,7 +1143,12 @@ address ul {
     margin-left: auto;
   }
 
-  address ul { display: flex; gap: 40px; margin: 0; padding: 0; }
+  address ul {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
 
   .teamOne-section {
     display: flex;
@@ -984,10 +1165,17 @@ address ul {
     justify-content: space-between;
   }
 
-  .team-card { width: 264px; }
+  .team-card {
+    width: 264px;
+  }
 
-  .section-features ul { flex-direction: row; gap: 24px; }
-  .section-features li { width: 264px; }
+  .section-features ul {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .section-features li {
+    width: 264px;
+  }
 
   .icons {
     width: 264px;
@@ -1001,7 +1189,12 @@ address ul {
     margin-bottom: 8px;
   }
 
-  .icon { width: 64px; height: 64px; fill: #2e2f42; display: block; }
+  .icon {
+    width: 64px;
+    height: 64px;
+    fill: #2e2f42;
+    display: block;
+  }
 
   .section-port ul {
     display: grid;
@@ -1009,8 +1202,14 @@ address ul {
     gap: 30px;
   }
 
-  .mobil-head-3 { font-size: 20px; font-weight: 500; text-align: left; }
-  .mobil-p { font-weight: 400; }
+  .mobil-head-3 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+  }
+  .mobil-p {
+    font-weight: 400;
+  }
 
   .footer-container {
     flex-direction: row;
@@ -1019,10 +1218,21 @@ address ul {
     text-align: left;
   }
 
-  .footer-social { align-items: flex-start; }
+  .footer-social {
+    align-items: flex-start;
+  }
 
-  .footerInput { flex-direction: row; align-items: center; gap: 24px; max-width: none; }
-  .footerInput input { width: 264px; }
+  .footerInput {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    max-width: none;
+  }
+  .footerInput input {
+    width: 264px;
+  }
 
-  .footer p { max-width: 264px; }
+  .footer p {
+    max-width: 264px;
+  }
 }
